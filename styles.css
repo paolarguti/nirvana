@@ -13,13 +13,7 @@
           flex-direction: column;
      -webkit-box-orient: vertical;
 }
-.flex-row-ns {
-    moz-flex-direction: row;
-      -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-          flex-direction: row;
-     -webkit-box-orient: horizontal;
-}
+
 .items-center {
     -webkit-align-items: center;
      -moz-align-items: center;
@@ -39,11 +33,18 @@
           justify-content: space-between;
 }
 
-/*mobile */
-@media only screen and (max-width: 767px) {
 
+
+/*not small*/
+@media only screen and (min-width: 767px) {
+  .flex-row-ns {
+        moz-flex-direction: row;
+        -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+            flex-direction: row;
+        -webkit-box-orient: horizontal;
+  }
 }
-
 
 html, body {
   font-family: 'Source Sans Pro', sans-serif;
