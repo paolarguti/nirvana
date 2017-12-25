@@ -1,55 +1,60 @@
 <head>
-<link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
-<style>
-  body {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
-    color: #333;
-  }
-  h1,h2,h3,h4,p {
-    margin-top: 0;
-  }
-  p {
-    line-height: 1.4em;
-  }
-  a {
-    cursor: pointer;
-  }
-  .paragraph {
-    width: 700px;
-    max-width: 100%;
-  }
-  .container {
-    width: 1200px;
-    max-width: 100%;
-    padding: 0 1rem;
-    margin-right: auto;
-    margin-left: auto;
-  }
-</style>
+  <!-- Source Sans Pro: Font -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
+  <!-- Font Awesome: An incons library http://fontawesome.io/-->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!-- Animate CSS: A css animations library https://daneden.github.io/animate.css/ -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <!-- Tachyons: A CSS Framework http://tachyons.io/docs/table-of-styles/-->
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 
 <body>
   <div class="cover" style="background-image: url('https://d1ax1i5f2y3x71.cloudfront.net/items/3f3u2H2u1k3k2K3u0G3c/DSC_8984.jpg');background-position: 0% 58%;">
-    <nav class="flex justify-between items-center ph6 pt2 white">
-      <div>
-        <img src="https://d1ax1i5f2y3x71.cloudfront.net/items/3M0V140M1f0v3i082G3f/noq-logo-centered.png" style="width:200px;">
+    <div class="container">
+      <nav class="flex justify-between items-center pt2 white">
+        <div style="max-width: 40%;">
+          <img class="mw-100" src="https://d1ax1i5f2y3x71.cloudfront.net/items/3M0V140M1f0v3i082G3f/noq-logo-centered.png" style="width:200px;">
+        </div>
+
+        <ul class="list">
+          <li class="dn di-ns ml3 fw6">Safety</li>
+          <li class="dn di-ns ml3 fw6">Team</li>
+          <li class="dn di-ns ml3 fw6">Sponsors</li>
+          <li class="dn di-ns ml3 fw6">2017 Results</li>
+          <li class="dn di-ns ml3 fw6">Contact</li>
+          <li class="dn di-ns ml3 fw6"><a class="ph4 pv2 ba br3 dib">Register &#187;</a>
+          </li>
+          <li class="di dn-ns ml3 fw6">
+          <i id="open--mobile-nav" class="fa fa-bars f3" aria-hidden="true"></i>
+          </li>
+        </ul>
+      </nav>
+
+      <div id="mobile-nav" class="fixed animated dn absolute--fill bg-white z-1 overflow-y-scroll">
+
+        <div class="clearfix bb b--black-05 flex justify-between w-100 items-center pt3 ph3">
+          <a href="#" title="home page"><img class="logo__img db mw-100" src="https://d1ax1i5f2y3x71.cloudfront.net/items/3M0V140M1f0v3i082G3f/noq-logo-centered.png" alt="Nirvana Oceanquest" style="width:100px;"/></a>
+          <i id="close--mobile-nav" class="fa fa-times pointer f3 blue pointer" aria-hidden="true"></i>
+        </div>
+
+        <ul class="pa3">
+          <li class="list pv2">
+            <a class="db near-black no-underline f4 fw5" href="#">Safety</a>
+          </li>
+          <li class="list pv2">
+            <a class="db near-black no-underline f4 fw5" href="#">Team</a>
+          </li>
+          <li class="list pv2">
+            <a class="db near-black no-underline f4 fw5" href="#">Sponsors</a>
+          </li>
+        </ul>
       </div>
 
-      <ul class="list">
-        <li class="di ml3 fw6">Safety</li>
-        <li class="di ml3 fw6">Team</li>
-        <li class="di ml3 fw6">Sponsors</li>
-        <li class="di ml3 fw6">2017 Results</li>
-        <li class="di ml3 fw6">Contact</li>
-        <li class="di ml3 fw6"><a class="ph4 pv2 ba br3 dib">Register &#187;</a></li>
-      </ul>
-    </nav>
-
-    <div class="container">
       <div class="white center tc paragraph pv6">
-        <h1 class="f1 mb2 pt4" style="font-size:3.5rem;">Nirvana Oceanquest 2018</h1>
+        <h1 class="f1 mb2 pt4">Nirvana Oceanquest 2018</h1>
         <p class="fw2 ttu tracked mb4 near-white f4">May 3 - 9&nbsp;&nbsp;&bull;&nbsp;&nbsp;San Andrés Island, Colombia</p>
         <div class="tc mt4">
           <a class="ph4 pv2 ba br3 dib blue bg-white f3">Register &#187;</a>
@@ -140,4 +145,25 @@
       </div>
     </div>
   </div>
+
+  <!-- jquery -->
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('#close--mobile-nav').click(function (e) {
+        e.preventDefault();
+        $('#mobile-nav').addClass('slideOutRight').removeClass('slideInRight');
+        $('body').removeClass('overlay-is-open')
+      });
+      $('#open--mobile-nav').click(function (e) {
+        e.preventDefault();
+        $('#mobile-nav').addClass('slideInRight').removeClass('slideOutRight dn');
+        $('body').addClass('overlay-is-open');
+      });
+    });
+  </script>
 </body>
