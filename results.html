@@ -1,128 +1,130 @@
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <!-- Source Sans Pro: Font -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
-  <!-- Font Awesome: An incons library http://fontawesome.io/-->
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <!-- Animate CSS: A css animations library https://daneden.github.io/animate.css/ -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <!-- Tachyons: A CSS Framework http://tachyons.io/docs/table-of-styles/-->
-  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
-  <link rel="stylesheet" href="styles.css"/>
-</head>
+<!DOCTYPE html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Source Sans Pro: Font -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
+    <!-- Font Awesome: An incons library http://fontawesome.io/-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Animate CSS: A css animations library https://daneden.github.io/animate.css/ -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- Tachyons: A CSS Framework http://tachyons.io/docs/table-of-styles/-->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
 
-<body>
-  <div>
-    <nav class="flex justify-between items-center ph6 pt2 blue">
-      <div>
-        <img src="https://d1ax1i5f2y3x71.cloudfront.net/items/3M0V140M1f0v3i082G3f/noq-logo-centered.png" style="width:200px;">
+  <body>
+    <div>
+      <nav class="flex justify-between items-center ph6 pt2 blue">
+        <div>
+          <img src="https://d1ax1i5f2y3x71.cloudfront.net/items/3M0V140M1f0v3i082G3f/noq-logo-centered.png" style="width:200px;">
+        </div>
+
+        <ul class="list">
+          <li class="di ml3 fw6">Safety</li>
+          <li class="di ml3 fw6">Team</li>
+          <li class="di ml3 fw6">Sponsors</li>
+          <li class="di ml3 fw6">2017 Results</li>
+          <li class="di ml3 fw6">Contact</li>
+          <li class="di ml3 fw6"><a class="ph4 pv2 ba br3 dib">Register &#187;</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="bg-near-white pv5">
+      <div id="results" class="container">
+        <div v-for="(day, i) in results" class="center paragraph mb4">
+          <h3 class="ph4 mb3 wavy">Day {{ i }}&nbsp;&nbsp;</h3>
+          <div class="bg-white pa4">
+            <div class="overflow-auto">
+              <table class="f6 w-100 mw-100 center" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white" title="Athlete">Athlete</th>
+                    <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">Country</th>
+                    <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">Discipline</th>
+                    <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white" title="Announced Depth">AP</th>
+                    <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">DP</th>
+                    <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">RP</th>
+                    <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">ADT</th>
+                    <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">NR</th>
+                    <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">Card</th>
+                  </tr>
+                </thead>
+                <tbody class="lh-copy">
+                  <tr v-for="row in day">
+                    <td class="pv3 pr3 bb b--black-05">{{ row.athlete }}</td>
+                    <td class="pv3 pr3 bb b--black-05">{{ row.country }}</td>
+                    <td class="pv3 pr3 bb b--black-05">{{ row.discipline }}</td>
+                    <td class="pv3 pr3 bb b--black-05">{{ row.ap }}</td>
+                    <td class="pv3 pr3 bb b--black-05">{{ row.dp }}</td>
+                    <td class="pv3 pr3 bb b--black-05">{{ row.rp }}</td>
+                    <td class="pv3 pr3 bb b--black-05">{{ row.adt }}</td>
+                    <td class="pv3 pr3 bb b--black-05">{{ row.nr }}</td>
+                    <td class="pv3 pr3 bb b--black-05"><i :class="row.card" class="fa fa-square stroke" aria-hidden="true"></i></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
       </div>
+    </div>
 
-      <ul class="list">
-        <li class="di ml3 fw6">Safety</li>
-        <li class="di ml3 fw6">Team</li>
-        <li class="di ml3 fw6">Sponsors</li>
-        <li class="di ml3 fw6">2017 Results</li>
-        <li class="di ml3 fw6">Contact</li>
-        <li class="di ml3 fw6"><a class="ph4 pv2 ba br3 dib">Register &#187;</a></li>
-      </ul>
-    </nav>
-  </div>
-
-  <div class="bg-near-white pv5">
-    <div id="results" class="container">
-      <div v-for="(day, i) in results" class="center paragraph mb4">
-        <h3 class="ph4 mb3 wavy">Day {{ i }}&nbsp;&nbsp;</h3>
-        <div class="bg-white pa4">
-          <div class="overflow-auto">
-            <table class="f6 w-100 mw-100 center" cellspacing="0">
-              <thead>
-                <tr>
-                  <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white" title="Athlete">Athlete</th>
-                  <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">Country</th>
-                  <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">Discipline</th>
-                  <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white" title="Announced Depth">AP</th>
-                  <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">DP</th>
-                  <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">RP</th>
-                  <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">ADT</th>
-                  <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">NR</th>
-                  <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white">Card</th>
-                </tr>
-              </thead>
-              <tbody class="lh-copy">
-                <tr v-for="row in day">
-                  <td class="pv3 pr3 bb b--black-05">{{ row.athlete }}</td>
-                  <td class="pv3 pr3 bb b--black-05">{{ row.country }}</td>
-                  <td class="pv3 pr3 bb b--black-05">{{ row.discipline }}</td>
-                  <td class="pv3 pr3 bb b--black-05">{{ row.ap }}</td>
-                  <td class="pv3 pr3 bb b--black-05">{{ row.dp }}</td>
-                  <td class="pv3 pr3 bb b--black-05">{{ row.rp }}</td>
-                  <td class="pv3 pr3 bb b--black-05">{{ row.adt }}</td>
-                  <td class="pv3 pr3 bb b--black-05">{{ row.nr }}</td>
-                  <td class="pv3 pr3 bb b--black-05"><i :class="row.card" class="fa fa-square stroke" aria-hidden="true"></i></td>
-                </tr>
-              </tbody>
-            </table>
+    <div class="bg-blue pv5">
+      <div class="container flex justify-center">
+        <div class="paragraph tc">
+          <p class="white f3 fw3">Set new personal, national or world records<br>in a friendly atmosphere</p>
+          <div class="tc mt4">
+            <a class="ph4 pv2 ba br3 dib blue bg-white f3">Register &#187;</a>
           </div>
         </div>
-
       </div>
     </div>
-  </div>
 
-  <div class="bg-blue pv5">
-    <div class="container flex justify-center">
-      <div class="paragraph tc">
-        <p class="white f3 fw3">Set new personal, national or world records<br>in a friendly atmosphere</p>
-        <div class="tc mt4">
-          <a class="ph4 pv2 ba br3 dib blue bg-white f3">Register &#187;</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script type='text/javascript'>
+      var results = new Vue({
+        el: '#results',
+        data: {
+          results:{}
+        },
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-  <script type='text/javascript'>
-    var results = new Vue({
-      el: '#results',
-      data: {
-        results:{}
-      },
+        computed: {},
 
-      computed: {},
+        methods: {},
 
-      methods: {},
+        created: function() {
+          var self = this;
+          var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1Ripq7j0ykUUz1MY0gqy-lRzeWYaP3GT7S1YALyJdCvk/edit?usp=sharing';
 
-      created: function() {
-        var self = this;
-        var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1Ripq7j0ykUUz1MY0gqy-lRzeWYaP3GT7S1YALyJdCvk/edit?usp=sharing';
+          Tabletop.init( { key: publicSpreadsheetUrl,
+                         callback: showInfo,
+                         simpleSheet: true } )
 
-        Tabletop.init( { key: publicSpreadsheetUrl,
-                       callback: showInfo,
-                       simpleSheet: true } )
+          function showInfo(data, tabletop) {
+            console.log(data);
 
-        function showInfo(data, tabletop) {
-          console.log(data);
+            var resultsObject = {};
 
-          var resultsObject = {};
-
-          for (var i = 0; i < data.length; i++) {
-            var key = data[i].day;
-            console.log(key);
-            if(!resultsObject[key]) {
-              resultsObject[key] = []
+            for (var i = 0; i < data.length; i++) {
+              var key = data[i].day;
+              console.log(key);
+              if(!resultsObject[key]) {
+                resultsObject[key] = []
+              }
+              resultsObject[key].push(data[i]);
             }
-            resultsObject[key].push(data[i]);
+            console.log(resultsObject);
+
+            self.results = resultsObject;
           }
-          console.log(resultsObject);
+        },
 
-          self.results = resultsObject;
-        }
-      },
-
-      mounted: function() {},
-    });
-  </script>
-</body>
+        mounted: function() {},
+      });
+    </script>
+  </body>
+</html>

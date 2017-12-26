@@ -32,10 +32,7 @@
       -ms-justify-content: space-between;
           justify-content: space-between;
 }
-
-
-
-/*not small*/
+/*Tachyions overwrite not small*/
 @media only screen and (min-width: 767px) {
   .flex-row-ns {
         moz-flex-direction: row;
@@ -46,6 +43,7 @@
   }
 }
 
+/*Resets*/
 html, body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 18px;
@@ -54,22 +52,24 @@ html, body {
 h1, h2, h3, h4, p {
   margin-top: 0;
 }
-p {
+p, ul {
   line-height: 1.4em;
 }
 a {
   cursor: pointer;
 }
-.paragraph {
-  width: 700px;
-  max-width: 100%;
-}
+
+/*Helpers*/
 .container {
   width: 1200px;
   max-width: 100%;
   padding: 0 1rem;
   margin-right: auto;
   margin-left: auto;
+}
+.paragraph {
+  width: 700px;
+  max-width: 100%;
 }
 .wavy {
           text-decoration-line: underline;
@@ -85,4 +85,23 @@ a {
 }
 .stroke {
   text-shadow: -0.5px -0.5px 0 rgba(0,0,0,.1), 0.5px -0.5px 0 rgba(0,0,0,.1), -0.5px 0.5px 0 rgba(0,0,0,.1), 0.5px 0.5px 0 rgba(0,0,0,.1);
+}
+.text-shadow {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/*Index*/
+#hero {
+  background-image: url('assets/nirvana-hero-image.png');
+}
+#sai {
+  background-image: url('assets/sai.png');
+}
+#safety {
+  background-image: url('assets/platform.jpg');
+}
+
+/*safety*/
+#safety-procedures {
+  background-image: url('assets/safety.png');
 }

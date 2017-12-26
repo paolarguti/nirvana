@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <div class="cover" style="background-image: url('https://d1ax1i5f2y3x71.cloudfront.net/items/3f3u2H2u1k3k2K3u0G3c/DSC_8984.jpg');background-position: 0% 58%;">
+    <div id="hero" class="cover bg-center-ns bg-bottom">
       <div class="container">
         <nav class="flex justify-between items-center pt2 white">
           <div style="max-width: 40%;">
@@ -23,19 +23,19 @@
 
           <ul class="list">
             <li class="dn di-l ml3 fw6">
-              <a class="white no-underline" href="/safety">Safety</a>
+              <a class="white no-underline text-shadow" href="/safety">Safety</a>
             </li>
             <li class="dn di-l ml3 fw6">
-              <a class="white no-underline" href="/team">Team</a>
+              <a class="white no-underline text-shadow" href="/team">Team</a>
             </li>
             <li class="dn di-l ml3 fw6">
-              <a class="white no-underline" href="/results">2017 Results</a>
+              <a class="white no-underline text-shadow" href="/results">2017 Results</a>
             </li>
             <li class="dn di-l ml3 fw6">
-              <a class="white no-underline" href="/contact">Contact</a>
+              <a class="white no-underline text-shadow" href="/contact">Contact</a>
             </li>
             <li class="dn di-l ml3 fw6">
-              <a class="ph4 pv2 ba br3 dib">Register &#187;</a>
+              <a class="ph4 pv2 ba br3 dib text-shadow">Register &#187;</a>
             </li>
             <li class="di dn-l ml3 fw6">
               <i id="open--mobile-nav" class="fa fa-bars f3" aria-hidden="true"></i>
@@ -46,7 +46,7 @@
         <div id="mobile-nav" class="fixed animated dn absolute--fill bg-white z-1 overflow-y-scroll">
 
           <div class="clearfix bb b--black-05 flex justify-between w-100 items-center pt3 ph3">
-            <a href="#" title="home page"><img class="logo__img db mw-100" src="https://d1ax1i5f2y3x71.cloudfront.net/items/3M0V140M1f0v3i082G3f/noq-logo-centered.png" alt="Nirvana Oceanquest" style="width:100px;"/></a>
+            <a href="#" title="home page"><img class="logo__img db mw-100" src="assets/white-logo.png" alt="Nirvana Oceanquest" style="width:100px;"/></a>
             <i id="close--mobile-nav" class="fa fa-times pointer f3 blue pointer" aria-hidden="true"></i>
           </div>
 
@@ -67,8 +67,8 @@
         </div>
 
         <div class="white center tc paragraph pv6-l pv5">
-          <h1 class="f1 mb2 pt4-l">Nirvana Oceanquest 2018</h1>
-          <p class="fw2 ttu tracked mb4 near-white f4-ns f5">May 3 - 9&nbsp;&nbsp;&bull;&nbsp;&nbsp;San Andrés Island, Colombia</p>
+          <h1 class="f1 mb2 pt4-l text-shadow">Nirvana Oceanquest 2018</h1>
+          <p class="fw2 ttu tracked mb4 near-white f4-ns f5 text-shadow">May 3 - 9&nbsp;&nbsp;&bull;&nbsp;&nbsp;San Andrés Island, Colombia</p>
           <div class="tc mt4">
             <a class="ph4 pv2 ba br3 dib blue bg-white f3">Register &#187;</a>
           </div>
@@ -98,7 +98,7 @@
 
     <div class="bg-near-white">
       <div class="flex">
-        <div class="w-40-l w-50-m w-100 bg-bottom dn db-ns" style="background-image:url('https://d1ax1i5f2y3x71.cloudfront.net/items/1A342l0z310W3A1n0j0E/sai.png');">
+        <div id="sai" class="w-40-l w-50-m w-100 bg-bottom dn db-ns">
           &nbsp;
         </div>
         <div class="w-60-l w-50-m w-100 pv5 pl5-l pr6-l ph3">
@@ -141,10 +141,10 @@
           <p>We will be implementing all the new safety procedures, including monitoring of vitals for all athletes after competition dives.</p>
           <p>We will have our own medical equipment on the platform at all time, from training day 1.</p>
           <div>
-            <a class="blue dib underline">Learn more &#187;</a>
+            <a href="/safety" class="blue dib underline">Learn more &#187;</a>
           </div>
         </div>
-        <div class="w-40-l w-50-m w-100 bg-center cover dn db-ns" style="background-image:url('https://d1ax1i5f2y3x71.cloudfront.net/items/1b1f023o0c3A1R3c373F/DSC_6879.jpg');">
+        <div id="safety" class="w-40-l w-50-m w-100 bg-center cover dn db-ns">
           &nbsp;
         </div>
       </div>
@@ -167,6 +167,7 @@
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
 
+    <!-- mobile nav -->
     <script>
       $(document).ready(function(){
         $('#close--mobile-nav').click(function (e) {
