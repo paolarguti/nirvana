@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Source Sans Pro: Font -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700" rel="stylesheet">
+    <!-- Font Awesome: An incons library http://fontawesome.io/-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Animate CSS: A css animations library https://daneden.github.io/animate.css/ -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- Tachyons: A CSS Framework http://tachyons.io/docs/table-of-styles/-->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="flex justify-between items-center pt2 blue">
+        <div style="max-width: 40%;">
+          <img class="mw-100" src="https://d1ax1i5f2y3x71.cloudfront.net/items/3M0V140M1f0v3i082G3f/noq-logo-centered.png" style="width:200px;">
+        </div>
+
+        <ul class="list">
+          <li class="dn di-l ml3 fw6">
+            <a class="blue no-underline" href="/safety">Safety</a>
+          </li>
+          <li class="dn di-l ml3 fw6">
+            <a class="blue no-underline" href="/team">Team</a>
+          </li>
+          <li class="dn di-l ml3 fw6">
+            <a class="blue no-underline" href="/results">2017 Results</a>
+          </li>
+          <li class="dn di-l ml3 fw6">
+            <a class="blue no-underline" href="/contact">Contact</a>
+          </li>
+          <li class="dn di-l ml3 fw6">
+            <a class="ph4 pv2 ba br3 dib">Register &#187;</a>
+          </li>
+          <li class="di dn-l ml3 fw6">
+            <i id="open--mobile-nav" class="fa fa-bars f3" aria-hidden="true"></i>
+          </li>
+        </ul>
+      </nav>
+
+      <div id="mobile-nav" class="fixed animated dn absolute--fill bg-white z-1 overflow-y-scroll">
+
+        <div class="clearfix bb b--black-05 flex justify-between w-100 items-center pt3 ph3">
+          <a href="#" title="home page"><img class="logo__img db mw-100" src="assets/white-logo.png" alt="Nirvana Oceanquest" style="width:100px;"/></a>
+          <i id="close--mobile-nav" class="fa fa-times pointer f3 blue pointer" aria-hidden="true"></i>
+        </div>
+
+        <ul class="pa3">
+          <li class="list pv2">
+            <a class="db near-black no-underline f4 fw5" href="/safety">Safety</a>
+          </li>
+          <li class="list pv2">
+            <a class="db near-black no-underline f4 fw5" href="/team">Team</a>
+          </li>
+          <li class="list pv2">
+            <a class="db near-black no-underline f4 fw5" href="/results">2017 Results</a>
+          </li>
+          <li class="list pv2">
+            <a class="db near-black no-underline f4 fw5" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-near-white">
+      <div class="container pv5">
+        <div class="paragraph center pa4 bg-white">
+          <p>Questions? Shoot us an email at info@walidboudhiaf.com</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-blue pv5">
+      <div class="container flex justify-center">
+        <div class="paragraph tc">
+          <p class="white f3 fw3">Set new personal, national or world records<br>in a friendly atmosphere</p>
+          <div class="tc mt4">
+            <a class="ph4 pv2 ba br3 dib blue bg-white f3">Register &#187;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+    <!-- mobile nav -->
+    <script>
+      $(document).ready(function(){
+        $('#close--mobile-nav').click(function (e) {
+          e.preventDefault();
+          $('#mobile-nav').addClass('slideOutRight').removeClass('slideInRight');
+          $('body').removeClass('overlay-is-open')
+        });
+        $('#open--mobile-nav').click(function (e) {
+          e.preventDefault();
+          $('#mobile-nav').addClass('slideInRight').removeClass('slideOutRight dn');
+          $('body').addClass('overlay-is-open');
+        });
+      });
+    </script>
+  </body>
+</html>
