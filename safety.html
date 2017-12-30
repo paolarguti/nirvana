@@ -11,13 +11,14 @@
     <!-- Tachyons: A CSS Framework http://tachyons.io/docs/table-of-styles/-->
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
   </head>
 
   <body>
     <div class="container">
       <nav class="flex justify-between items-center pt2 blue">
         <div style="max-width: 40%;">
-          <img class="mw-100" src="https://d1ax1i5f2y3x71.cloudfront.net/items/3M0V140M1f0v3i082G3f/noq-logo-centered.png" style="width:200px;">
+          <a href="/"><img class="mw-100" src="https://d1ax1i5f2y3x71.cloudfront.net/items/3M0V140M1f0v3i082G3f/noq-logo-centered.png" style="width:200px;"></a>
         </div>
 
         <ul class="list">
@@ -28,10 +29,7 @@
             <a class="blue no-underline" href="/team">Team</a>
           </li>
           <li class="dn di-l ml3 fw6">
-            <a class="blue no-underline" href="/results">2017 Results</a>
-          </li>
-          <li class="dn di-l ml3 fw6">
-            <a class="blue no-underline" href="/contact">Contact</a>
+            <a class="blue no-underline" href="/results">Results</a>
           </li>
           <li class="dn di-l ml3 fw6">
             <a class="ph4 pv2 ba br3 dib">Register &#187;</a>
@@ -57,17 +55,14 @@
             <a class="db near-black no-underline f4 fw5" href="/team">Team</a>
           </li>
           <li class="list pv2">
-            <a class="db near-black no-underline f4 fw5" href="/results">2017 Results</a>
-          </li>
-          <li class="list pv2">
-            <a class="db near-black no-underline f4 fw5" href="/contact">Contact</a>
+            <a class="db near-black no-underline f4 fw5" href="/results">Results</a>
           </li>
         </ul>
       </div>
     </div>
 
     <div id="safety-procedures" class="bg-center pv5 cover">
-      <div class="container mv4">
+      <div class="container mv4-l">
         <div class="paragraph center">
           <h1 class="white f1 text-shadow mb0">Safety Protocol</h1>
         </div>
@@ -75,7 +70,7 @@
     </div>
 
     <div class="container">
-      <div class="paragraph center pv5">
+      <div class="paragraph center pt4-l pt3 pb5">
         <p>We will be implementing all the new safety procedures, including monitoring of vitals for all athletes after competition dives.</p>
         <p class="mb4">We will have our own medical equipment on the platform at all time, from training day 1.</p>
 
@@ -96,26 +91,28 @@
 
           <p>We will have our own medical equipment on the platform at all time, from training day 1:</p>
 
-          <ul class="w50 dib v-top mt0 pr4">
-            <li>O2 demand reg</li>
-            <li>O2 dial flow reg</li>
-            <li>DAN bag with O2 flow reg</li>
-            <li>DECO O2</li>
-            <li>portable suction machine</li>
-            <li>trauma sheers</li>
-            <li>NPA nasal pharyngeal airway</li>
-            <li>OPA oral pharyngeal airway</li>
-          </ul>
+          <div class="mb3">
+            <ul class="w50 dib v-top mv0 pr4">
+              <li>O2 demand reg</li>
+              <li>O2 dial flow reg</li>
+              <li>DAN bag with O2 flow reg</li>
+              <li>DECO O2</li>
+              <li>portable suction machine</li>
+              <li>trauma sheers</li>
+              <li>NPA nasal pharyngeal airway</li>
+              <li>OPA oral pharyngeal airway</li>
+            </ul>
 
-          <ul class="w50 dib v-top mt0 pr4">
-            <li>AED</li>
-            <li>CPAP mask</li>
-            <li>O2 sat monitor</li>
-            <li>backboard</li>
-            <li>Advanced airway: Laryngeal Mask Airway</li>
-            <li>Laryngoscope</li>
-            <li>Endotracheal tubes.</li>
-          </ul>
+            <ul class="w50 dib v-top mv0 pr4">
+              <li>AED</li>
+              <li>CPAP mask</li>
+              <li>O2 sat monitor</li>
+              <li>backboard</li>
+              <li>Advanced airway: Laryngeal Mask Airway</li>
+              <li>Laryngoscope</li>
+              <li>Endotracheal tubes.</li>
+            </ul>
+          </div>
 
           <p class="mb0"><strong>O2 available at all time for free</strong> (for deep dives and/or barotraumas)</p>
         </div>
@@ -139,13 +136,20 @@
       </div>
     </div>
 
+    <div class="pv2 bg-dark-blue near-white tc">
+      <div class="container">
+        <p class="mb0 fw2">Questions? Contact us at info@walidboudhiaf.com</p>
+      </div>
+    </div>
+
+    <!-- jquery -->
     <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
 
-    <!-- mobile nav -->
     <script>
+      // mobile nav
       $(document).ready(function(){
         $('#close--mobile-nav').click(function (e) {
           e.preventDefault();

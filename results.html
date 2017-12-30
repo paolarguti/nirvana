@@ -11,13 +11,14 @@
     <!-- Tachyons: A CSS Framework http://tachyons.io/docs/table-of-styles/-->
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
   </head>
 
   <body>
-     <div class="container">
+    <div class="container">
       <nav class="flex justify-between items-center pt2 blue">
         <div style="max-width: 40%;">
-          <img class="mw-100" src="https://d1ax1i5f2y3x71.cloudfront.net/items/3M0V140M1f0v3i082G3f/noq-logo-centered.png" style="width:200px;">
+          <a href="/"><img class="mw-100" src="https://d1ax1i5f2y3x71.cloudfront.net/items/3M0V140M1f0v3i082G3f/noq-logo-centered.png" style="width:200px;"></a>
         </div>
 
         <ul class="list">
@@ -28,10 +29,7 @@
             <a class="blue no-underline" href="/team">Team</a>
           </li>
           <li class="dn di-l ml3 fw6">
-            <a class="blue no-underline" href="/results">2017 Results</a>
-          </li>
-          <li class="dn di-l ml3 fw6">
-            <a class="blue no-underline" href="/contact">Contact</a>
+            <a class="blue no-underline" href="/results">Results</a>
           </li>
           <li class="dn di-l ml3 fw6">
             <a class="ph4 pv2 ba br3 dib">Register &#187;</a>
@@ -57,10 +55,7 @@
             <a class="db near-black no-underline f4 fw5" href="/team">Team</a>
           </li>
           <li class="list pv2">
-            <a class="db near-black no-underline f4 fw5" href="/results">2017 Results</a>
-          </li>
-          <li class="list pv2">
-            <a class="db near-black no-underline f4 fw5" href="/contact">Contact</a>
+            <a class="db near-black no-underline f4 fw5" href="/results">Results</a>
           </li>
         </ul>
       </div>
@@ -69,16 +64,16 @@
     <div class="bg-near-white pv5">
       <div id="results" class="container">
         <div class="center mw-100" style="width:800px;">
-          <div class="flex flex-wrap justify-center tr mb3">
+          <div class="flex flex-wrap justify-center tr mb2">
             <div v-for="(day, i) in results" class="blue">
-              <label :for="i" class="ph3 pv2 mh1 mv1 ba br3 db fw6 pointer nowrap" :class="{ 'bg-blue white': activeDay == day }">day {{ i }}</label>
+              <label :for="i" class="ph3 pv2 mh1 mb2 ba br3 db fw6 pointer nowrap" :class="{ 'bg-blue white': activeDay == day }">day {{ i }}</label>
               <input :id="i" v-model="activeDay" v-bind:value="results[i]" type="radio" class="dn">
             </div>
           </div>
 
-          <div class="bg-white pa4">
+          <div class="bg-white">
             <div class="overflow-auto">
-              <table class="f6 w-100 mw-100 center" cellspacing="0">
+              <table class="f6 w-100 mw-100 center pa4" cellspacing="0">
                 <thead>
                   <tr>
                     <th class="fw6 bb b--black-05 tl pb3 pr3 bg-white" title="Athlete">Athlete</th>
@@ -123,7 +118,22 @@
       </div>
     </div>
 
+    <div class="pv2 bg-dark-blue near-white tc">
+      <div class="container">
+        <p class="mb0 fw2">Questions? Contact us at info@walidboudhiaf.com</p>
+      </div>
+    </div>
+
+    <!-- jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+    <!-- vue.js: a javascript framework -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.min.js"></script>
+
+    <!-- tabletop: A library to get google sheets data as json -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
     <script type='text/javascript'>
       var results = new Vue({
@@ -168,6 +178,19 @@
         },
 
         mounted: function() {},
+      });
+      // mobile nav
+      $(document).ready(function(){
+        $('#close--mobile-nav').click(function (e) {
+          e.preventDefault();
+          $('#mobile-nav').addClass('slideOutRight').removeClass('slideInRight');
+          $('body').removeClass('overlay-is-open')
+        });
+        $('#open--mobile-nav').click(function (e) {
+          e.preventDefault();
+          $('#mobile-nav').addClass('slideInRight').removeClass('slideOutRight dn');
+          $('body').addClass('overlay-is-open');
+        });
       });
     </script>
   </body>
