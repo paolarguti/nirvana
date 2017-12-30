@@ -64,6 +64,7 @@
     <div class="bg-near-white pv5">
       <div id="results" class="container">
         <div class="center mw-100" style="width:800px;min-height: 600px;">
+          <!-- Spinner from http://tobiasahlin.com/spinkit/ -->
           <div v-if="loading" id="spinner">
             <div class="absolute absolute--fill bg--white o-60 z-999"></div>
             <div class="flex flex-column justify-center items-center vh-100 fixed absolute--fill z-9999">
@@ -143,8 +144,6 @@
         <p class="mb0 fw2">Questions? Contact us at info@walidboudhiaf.com</p>
       </div>
     </div>
-
-    {% comment %}From http://tobiasahlin.com/spinkit/{% endcomment %}
 
     <!-- jquery -->
     <script
