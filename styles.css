@@ -33,7 +33,7 @@
           justify-content: space-between;
 }
 /*Tachyions overwrite not small*/
-@media only screen and (min-width: 767px) {
+@media screen and (min-width:30em) {
   .flex-row-ns {
         moz-flex-direction: row;
         -ms-flex-direction: row;

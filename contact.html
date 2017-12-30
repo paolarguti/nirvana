@@ -11,6 +11,7 @@
     <!-- Tachyons: A CSS Framework http://tachyons.io/docs/table-of-styles/-->
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
   </head>
 
   <body>
@@ -66,10 +67,10 @@
       </div>
     </div>
 
-    <div class="bg-near-white">
-      <div class="container pv5">
+    <div class="bg-near-white pv5">
+      <div class="container">
         <div class="paragraph center pa4 bg-white">
-          <p>Questions? Shoot us an email at info@walidboudhiaf.com</p>
+          <p class="mb0">Questions? Shoot us an email at info@walidboudhiaf.com</p>
         </div>
       </div>
     </div>
@@ -85,13 +86,20 @@
       </div>
     </div>
 
+    <div class="pv2 bg-dark-blue near-white tc">
+      <div class="container">
+        <p class="mb0 fw2">Questions? Contact us at info@walidboudhiaf.com</p>
+      </div>
+    </div>
+
+    <!-- jquery -->
     <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
 
-    <!-- mobile nav -->
     <script>
+      // mobile nav
       $(document).ready(function(){
         $('#close--mobile-nav').click(function (e) {
           e.preventDefault();

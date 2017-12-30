@@ -11,13 +11,14 @@
     <!-- Tachyons: A CSS Framework http://tachyons.io/docs/table-of-styles/-->
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
   </head>
 
   <body>
     <div class="container">
       <nav class="flex justify-between items-center pt2 blue">
         <div style="max-width: 40%;">
-          <img class="mw-100" src="https://d1ax1i5f2y3x71.cloudfront.net/items/3M0V140M1f0v3i082G3f/noq-logo-centered.png" style="width:200px;">
+          <a href="/"><img class="mw-100" src="https://d1ax1i5f2y3x71.cloudfront.net/items/3M0V140M1f0v3i082G3f/noq-logo-centered.png" style="width:200px;"></a>
         </div>
 
         <ul class="list">
@@ -28,10 +29,7 @@
             <a class="blue no-underline" href="/team">Team</a>
           </li>
           <li class="dn di-l ml3 fw6">
-            <a class="blue no-underline" href="/results">2017 Results</a>
-          </li>
-          <li class="dn di-l ml3 fw6">
-            <a class="blue no-underline" href="/contact">Contact</a>
+            <a class="blue no-underline" href="/results">Results</a>
           </li>
           <li class="dn di-l ml3 fw6">
             <a class="ph4 pv2 ba br3 dib">Register &#187;</a>
@@ -57,10 +55,7 @@
             <a class="db near-black no-underline f4 fw5" href="/team">Team</a>
           </li>
           <li class="list pv2">
-            <a class="db near-black no-underline f4 fw5" href="/results">2017 Results</a>
-          </li>
-          <li class="list pv2">
-            <a class="db near-black no-underline f4 fw5" href="/contact">Contact</a>
+            <a class="db near-black no-underline f4 fw5" href="/results">Results</a>
           </li>
         </ul>
       </div>
@@ -68,8 +63,8 @@
 
     <div class="pv5 bg-near-white">
       <div class="container">
-        <h2 class="f1 tc">Meet The Team</h2>
-        <div class="flex flex-wrap">
+        <h2 class="f2 tc">Meet The Team</h2>
+        <div class="flex flex-wrap" style="margin-right: -1rem;margin-left: -1rem;">
 
           <div class="w-third-l w-50-m w-100 tc ph3-ns mb3">
             <img class="mw-100 mb2" src="assets/organizer-walid-boudhiaf.png">
@@ -158,7 +153,6 @@
       </div>
     </div>
 
-
     <div class="bg-blue pv5">
       <div class="container flex justify-center">
         <div class="paragraph tc">
@@ -169,5 +163,33 @@
         </div>
       </div>
     </div>
+
+    <div class="pv2 bg-dark-blue near-white tc">
+      <div class="container">
+        <p class="mb0 fw2">Questions? Contact us at info@walidboudhiaf.com</p>
+      </div>
+    </div>
+
+    <!-- jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+    <script>
+      // mobile nav
+      $(document).ready(function(){
+        $('#close--mobile-nav').click(function (e) {
+          e.preventDefault();
+          $('#mobile-nav').addClass('slideOutRight').removeClass('slideInRight');
+          $('body').removeClass('overlay-is-open')
+        });
+        $('#open--mobile-nav').click(function (e) {
+          e.preventDefault();
+          $('#mobile-nav').addClass('slideInRight').removeClass('slideOutRight dn');
+          $('body').addClass('overlay-is-open');
+        });
+      });
+    </script>
   </body>
 </html>
