@@ -32,16 +32,6 @@
       -ms-justify-content: space-between;
           justify-content: space-between;
 }
-/*Tachyions overwrite not small*/
-@media screen and (min-width:30em) {
-  .flex-row-ns {
-        moz-flex-direction: row;
-        -ms-flex-direction: row;
-    -webkit-flex-direction: row;
-            flex-direction: row;
-        -webkit-box-orient: horizontal;
-  }
-}
 
 /*Resets*/
 html, body {
@@ -67,6 +57,10 @@ a {
   margin-right: auto;
   margin-left: auto;
 }
+.section {
+  margin-right: -1rem;
+  margin-left: -1rem;
+}
 .paragraph {
   width: 700px;
   max-width: 100%;
@@ -89,6 +83,25 @@ a {
 .text-shadow {
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
+.ar--one-one {
+  position: relative;
+}
+.ar--one-one:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 100%;
+}
+.ar--one-one .image-container {
+  background-size: 100% auto;
+  background-position: top center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
 
 /*Index*/
 #hero {
@@ -104,4 +117,23 @@ a {
 /*safety*/
 #safety-procedures {
   background-image: url('assets/safety.png');
+}
+
+/*not small*/
+@media screen and (min-width:30em) {
+  .flex-row-ns {
+        moz-flex-direction: row;
+        -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+            flex-direction: row;
+        -webkit-box-orient: horizontal;
+  }
+  .section-ns {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+}
+
+/*large */
+@media screen and (min-width:60em) {
 }
