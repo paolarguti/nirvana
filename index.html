@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <div id="hero" class="cover bg-center-ns bg-bottom">
+    <div id="hero" class="cover bg-blue bg-center-ns bg-bottom">
       <div class="container">
         <nav class="flex justify-between items-center pt2 white">
           <div style="max-width: 40%;">
@@ -94,15 +94,17 @@
       </div>
     </div>
 
-    <div class="bg-near-white">
-      <div class="flex flex-column flex-row-ns">
-        <div id="sai" class="w-40-l w-50-m w-100 bg-bottom" style="min-height: 200px;">
-          &nbsp;
-        </div>
-        <div class="w-60-l w-50-m w-100 pb5 pt5-ns pt3 pl5-l pr6-l ph3">
-          <h3 class="f2 mb3">San Andrés Island</h3>
-          <p>San Andrés is one of the two principal islands of San Andrés and Providence archipelago. It is located 200 Kilometers east of Nicaragua although it belongs to Colombia.</p>
-          <p class="mb0">Covered in coconut palms, San Andrés, the largest island in the archipelago, is indeed paradisiacal Caribbean, the sea surrounding the area is known by Colombians as the &quot;Mar de Siete Colores&quot; (seven-coloured sea) due to the variations of depth.</p>
+    <div id="sai" class="has-bgs bg-near-white">
+      <div class="container">
+        <div class="flex flex-column flex-row-ns">
+          <div class="w-40-l w-50-m w-100" style="min-height: 200px;">
+            &nbsp;
+          </div>
+          <div class="w-60-l w-50-m w-100 pb5 pt5-ns pt3 pl4-ns">
+            <h3 class="f2 mb3">San Andrés Island</h3>
+            <p>San Andrés is one of the two principal islands of San Andrés and Providence archipelago. It is located 200 Kilometers east of Nicaragua although it belongs to Colombia.</p>
+            <p class="mb0">Covered in coconut palms, San Andrés, the largest island in the archipelago, is indeed paradisiacal Caribbean, the sea surrounding the area is known by Colombians as the &quot;Mar de Siete Colores&quot; (seven-coloured sea) due to the variations of depth.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -132,18 +134,21 @@
       </div>
     </div>
 
-    <div class="bg-near-white">
-      <div class="flex flex-column flex-row-ns">
-        <div class="w-60-l w-50-m w-100 pb5 pt5-ns pt3 pr5-l pl6-l ph3 order-1">
-          <h3 class="f2 mb3">Safety First</h3>
-          <p>We will be implementing all the new safety procedures, including monitoring of vitals for all athletes after competition dives.</p>
-          <p>We will have our own medical equipment on the platform at all time, from training day 1.</p>
-          <div>
-            <a href="/safety" class="blue dib underline">Learn more &#187;</a>
+    <div id="safety" class="has-bgs bg-near-white">
+      <div class="container">
+        <div class="flex flex-column flex-row-ns">
+          <div class="w-60-l w-50-m w-100 pb5 pt5-ns pt3 pr4-ns order-1">
+            <h3 class="f2 mb3">Safety First</h3>
+            <p>We will be implementing all the new safety procedures, including monitoring of vitals for all athletes after competition dives.</p>
+            <p>We will have our own medical equipment on the platform at all time, from training day 1.</p>
+            <div>
+              <a href="/safety" class="blue dib underline">Learn more &#187;</a>
+            </div>
           </div>
-        </div>
-        <div id="safety" class="w-40-l w-50-m w-100 bg-center cover order-0 order-2-ns" style="min-height: 200px;">
-          &nbsp;
+
+          <div class="w-40-l w-50-m w-100 bg-center order-0 order-2-ns" style="min-height: 200px;">
+            &nbsp;
+          </div>
         </div>
       </div>
     </div>
@@ -189,6 +194,11 @@
           $('body').addClass('overlay-is-open');
         });
       });
+
+      // #CSS3 Multiple backgrounds fallback support
+      /*! modernizr 3.3.1 (Custom Build) | MIT *
+       * https://modernizr.com/download/?-multiplebgs-setclasses !*/
+      !function(e,n,s){function t(e,n){return typeof e===n}function a(){var e,n,s,a,o,i,c;for(var f in l)if(l.hasOwnProperty(f)){if(e=[],n=l[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(s=0;s<n.options.aliases.length;s++)e.push(n.options.aliases[s].toLowerCase());for(a=t(n.fn,"function")?n.fn():n.fn,o=0;o<e.length;o++)i=e[o],c=i.split("."),1===c.length?Modernizr[c[0]]=a:(!Modernizr[c[0]]||Modernizr[c[0]]instanceof Boolean||(Modernizr[c[0]]=new Boolean(Modernizr[c[0]])),Modernizr[c[0]][c[1]]=a),r.push((a?"":"no-")+c.join("-"))}}function o(e){var n=f.className,s=Modernizr._config.classPrefix||"";if(u&&(n=n.baseVal),Modernizr._config.enableJSClass){var t=new RegExp("(^|\\s)"+s+"no-js(\\s|$)");n=n.replace(t,"$1"+s+"js$2")}Modernizr._config.enableClasses&&(n+=" "+s+e.join(" "+s),u?f.className.baseVal=n:f.className=n)}function i(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):u?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}var r=[],l=[],c={_version:"3.3.1",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var s=this;setTimeout(function(){n(s[e])},0)},addTest:function(e,n,s){l.push({name:e,fn:n,options:s})},addAsyncTest:function(e){l.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=c,Modernizr=new Modernizr;var f=n.documentElement,u="svg"===f.nodeName.toLowerCase();Modernizr.addTest("multiplebgs",function(){var e=i("a").style;return e.cssText="background:url(https://),url(https://),red url(https://)",/(url\s*\(.*?){3}/.test(e.background)}),a(),o(r),delete c.addTest,delete c.addAsyncTest;for(var p=0;p<Modernizr._q.length;p++)Modernizr._q[p]();e.Modernizr=Modernizr}(window,document);
     </script>
   </body>
 </html>

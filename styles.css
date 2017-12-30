@@ -107,9 +107,30 @@ a {
 #hero {
   background-image: url('assets/nirvana-hero-image.png');
 }
-#sai {
-  background-image: url('assets/sai.png');
+.multiplebgs .has-bgs {
+  background-size: auto 100%, 100% auto;
+  background-position:center 200px, center top;
+  background-repeat: no-repeat, no-repeat;
 }
+.no-multiplebgs .has-bgs {
+  background-size: auto 200px;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.multiplebgs #sai {
+  background-image: linear-gradient(to right, #f4f4f4, #f4f4f4), url('assets/sai.png');
+}
+.no-multiplebgs #sai {
+  background-image: url('assets/sai.png');
+
+}
+.multiplebgs #safety {
+  background-image: linear-gradient(to right, #f4f4f4, #f4f4f4), url('assets/platform.jpg');
+}
+.no-multiplebgs #safety {
+  background-image: url('assets/platform.jpg');
+}
+
 #safety {
   background-image: url('assets/platform.jpg');
 }
@@ -132,8 +153,33 @@ a {
     margin-right: -1rem;
     margin-left: -1rem;
   }
+  .multiplebgs .has-bgs {
+    background-repeat: no-repeat, repeat;
+  }
+  .multiplebgs #sai {
+    background-position:right center, left center;
+  }
+  .multiplebgs #safety {
+    background-position:left center, right center;
+  }
+}
+
+/*medium*/
+@media screen and (min-width:30em) and (max-width:60em) {
+  .multiplebgs .has-bgs {
+    background-size: 50% 100%, auto 100%;
+  }
+  .no-multiplebgs .has-bgs {
+    background-size: 50% auto;
+  }
 }
 
 /*large */
 @media screen and (min-width:60em) {
+  .multiplebgs .has-bgs {
+    background-size: 60% 100%, auto 100%;
+  }
+  .no-multiplebgs .has-bgs {
+    background-size: 40% auto;
+  }
 }
