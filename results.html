@@ -63,7 +63,27 @@
 
     <div class="bg-near-white pv5">
       <div id="results" class="container">
-        <div class="center mw-100" style="width:800px;">
+        <div class="center mw-100" style="width:800px;min-height: 600px;">
+          <div v-if="loading" id="spinner">
+            <div class="absolute absolute--fill bg--white o-60 z-999"></div>
+            <div class="flex flex-column justify-center items-center vh-100 fixed absolute--fill z-9999">
+              <div class="sk-circle">
+                <div class="sk-circle1 sk-child"></div>
+                <div class="sk-circle2 sk-child"></div>
+                <div class="sk-circle3 sk-child"></div>
+                <div class="sk-circle4 sk-child"></div>
+                <div class="sk-circle5 sk-child"></div>
+                <div class="sk-circle6 sk-child"></div>
+                <div class="sk-circle7 sk-child"></div>
+                <div class="sk-circle8 sk-child"></div>
+                <div class="sk-circle9 sk-child"></div>
+                <div class="sk-circle10 sk-child"></div>
+                <div class="sk-circle11 sk-child"></div>
+                <div class="sk-circle12 sk-child"></div>
+              </div>
+            </div>
+          </div>
+
           <div class="flex flex-wrap justify-center tr mb2">
             <div v-for="(day, i) in results" class="blue">
               <label :for="i" class="ph3 pv2 mh1 mb2 ba br3 db fw6 pointer nowrap" :class="{ 'bg-blue white': activeDay == day }">day {{ i }}</label>
@@ -71,7 +91,7 @@
             </div>
           </div>
 
-          <div class="bg-white">
+          <div v-if="!loading" class="bg-white">
             <div class="overflow-auto">
               <table class="f6 w-100 mw-100 center pa4" cellspacing="0">
                 <thead>
@@ -124,6 +144,8 @@
       </div>
     </div>
 
+    {% comment %}From http://tobiasahlin.com/spinkit/{% endcomment %}
+
     <!-- jquery -->
     <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -140,7 +162,8 @@
         el: '#results',
         data: {
           results: {},
-          activeDay: {}
+          activeDay: {},
+          loading: true
         },
 
         computed: {},
@@ -156,8 +179,6 @@
                          simpleSheet: true } )
 
           function showInfo(data, tabletop) {
-            console.log(data);
-
             var resultsObject = {};
 
             for (var i = 0; i < data.length; i++) {
@@ -170,6 +191,7 @@
             }
             console.log(resultsObject);
 
+            self.loading = false;
             self.results = resultsObject;
 
             var daysCount = Object.keys(self.results).length;
