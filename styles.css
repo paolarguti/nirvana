@@ -32,6 +32,24 @@
       -ms-justify-content: space-between;
           justify-content: space-between;
 }
+.blue {
+  color: #2985cb;
+}
+.bg-blue {
+  background-color: #2985cb;
+}
+.b--blue {
+  border-color: #2985cb;
+}
+.dark-blue {
+  color: #033e76;
+}
+.bg-dark-blue {
+  background-color: #033e76;
+}
+.b--dark-blue {
+  background-color: #033e76;
+}
 
 /*Resets*/
 html, body {
@@ -72,9 +90,9 @@ a {
           text-decoration-style: wavy;
      -moz-text-decoration-style: wavy;
   -webkit-text-decoration-style: wavy;
-          text-decoration-color: #357edd;
-     -moz-text-decoration-color: #357edd;
-  -webkit-text-decoration-color: #357edd;
+          text-decoration-color: #2985cb;
+     -moz-text-decoration-color: #2985cb;
+  -webkit-text-decoration-color: #2985cb;
   text-underline-position: under;
 }
 .stroke {
