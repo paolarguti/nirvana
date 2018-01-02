@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
     <link rel="stylesheet" href="styles.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111799526-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-111799526-1');
+    </script>
   </head>
 
   <body>
@@ -21,7 +30,7 @@
           <a href="/"><img class="mw-100" src="assets/logo-noq-color.png" style="width:100px;"></a>
         </div>
 
-        <ul class="list">
+        <ul class="list flex items-center">
           <li class="dn di-l ml3 fw6">
             <a class="blue no-underline" href="/safety">Safety</a>
           </li>
@@ -32,7 +41,20 @@
             <a class="blue no-underline" href="/results">Results</a>
           </li>
           <li class="dn di-l ml3 fw6">
-            <a class="ph4 pv2 ba br3 dib">Register &#187;</a>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <div class="dn">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="on0" value="Options">
+                <select name="os0">
+                  <option value="Entry fee"></option>
+                  <option value="AIDA IC + Comp"></option>
+                </select>
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                ">
+              </div>
+              <button class="ph4 pv2 ba br3 dib blue fw6 lh-title" type="submit" name="submit">Register &#187;</button>
+            </form>
           </li>
           <li class="di dn-l ml3 fw6">
             <i id="open--mobile-nav" class="fa fa-bars f3" aria-hidden="true"></i>
@@ -41,9 +63,8 @@
       </nav>
 
       <div id="mobile-nav" class="fixed animated dn absolute--fill bg-white z-1 overflow-y-scroll">
-
-        <div class="clearfix bb b--black-05 flex justify-between w-100 items-center pt3 ph3">
-          <a href="#" title="home page"><img class="logo__img db mw-100" src="assets/logo-noq-color.png" alt="Nirvana Oceanquest" style="width:100px;"/></a>
+        <div class="clearfix bb b--black-05 flex justify-between w-100 items-center pa3">
+          <a href="/" title="home page"><img class="logo__img db mw-100" src="assets/logo-noq-color.png" alt="Nirvana Oceanquest" style="width:80px;"/></a>
           <i id="close--mobile-nav" class="fa fa-times pointer f3 blue pointer" aria-hidden="true"></i>
         </div>
 
@@ -56,6 +77,22 @@
           </li>
           <li class="list pv2">
             <a class="db near-black no-underline f4 fw5" href="/results">Results</a>
+          </li>
+          <li class="list pv2">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <div class="dn">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="on0" value="Options">
+                <select name="os0">
+                  <option value="Entry fee"></option>
+                  <option value="AIDA IC + Comp"></option>
+                </select>
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                ">
+              </div>
+              <button class="ph4 pv2 br3 bg-blue white dib" type="submit" name="submit">Register &#187;</button>
+            </form>
           </li>
         </ul>
       </div>
@@ -133,7 +170,20 @@
         <div class="paragraph tc">
           <p class="white f3 fw3">Set new personal, national or world records<br>in a friendly atmosphere</p>
           <div class="tc mt4">
-            <a class="ph4 pv2 ba br3 dib blue bg-white f3">Register &#187;</a>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <div class="dn">
+                  <input type="hidden" name="cmd" value="_s-xclick">
+                  <input type="hidden" name="on0" value="Options">
+                  <select name="os0">
+                    <option value="Entry fee"></option>
+                    <option value="AIDA IC + Comp"></option>
+                  </select>
+                  <input type="hidden" name="currency_code" value="USD">
+                  <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                  ">
+              </div>
+              <button class="ph4 pv2 ba br3 dib blue bg-white f3" type="submit" name="submit">Register &#187;</button>
+            </form>
           </div>
         </div>
       </div>
@@ -142,7 +192,7 @@
     <div class="pv3 bg-dark-blue near-white">
       <div class="container">
         <div class="flex justify-between items-center">
-        <p class="mb0 fw2 mr3">Questions? Contact us at info@walidboudhiaf.com</p>
+        <p class="mb0 fw2 mr3"><a href="mailto:info@walidboudhiaf.com" class="white no-underline">Questions? Contact us at info@walidboudhiaf.com</a></p>
         <div style="width: 200px;">
           <img src="assets/logo-innersea.png">
         </div>
@@ -160,63 +210,17 @@
 
     <!-- tabletop: A library to get google sheets data as json -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-    <script type='text/javascript'>
-      var results = new Vue({
-        el: '#results',
-        data: {
-          results: {},
-          activeDay: {},
-          loading: true
-        },
 
-        computed: {},
+     <!-- jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
 
-        methods: {},
+    <!-- app.js -->
+    <script type="text/javascript" src="assets/app.js"></script>
 
-        created: function() {
-          var self = this;
-          var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/11mrRGlu44WtLR3zZd4hQS8ue06jVhtmJNEAHEOWBb9c/edit?usp=sharing';
-
-          Tabletop.init( { key: publicSpreadsheetUrl,
-                         callback: showInfo,
-                         simpleSheet: true } )
-
-          function showInfo(data, tabletop) {
-            var resultsObject = {};
-
-            for (var i = 0; i < data.length; i++) {
-              var key = data[i].day;
-              console.log(key);
-              if(!resultsObject[key]) {
-                resultsObject[key] = []
-              }
-              resultsObject[key].push(data[i]);
-            }
-            console.log(resultsObject);
-
-            self.loading = false;
-            self.results = resultsObject;
-
-            var daysCount = Object.keys(self.results).length;
-            self.activeDay = self.results[daysCount];
-          }
-        },
-
-        mounted: function() {},
-      });
-      // mobile nav
-      $(document).ready(function(){
-        $('#close--mobile-nav').click(function (e) {
-          e.preventDefault();
-          $('#mobile-nav').addClass('slideOutRight').removeClass('slideInRight');
-          $('body').removeClass('overlay-is-open')
-        });
-        $('#open--mobile-nav').click(function (e) {
-          e.preventDefault();
-          $('#mobile-nav').addClass('slideInRight').removeClass('slideOutRight dn');
-          $('body').addClass('overlay-is-open');
-        });
-      });
-    </script>
+    <!-- results vue app -->
+    <script type="text/javascript" src="assets/results.js"></script>
   </body>
 </html>
