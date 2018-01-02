@@ -1,5 +1,5 @@
-// mobile nav
 $(document).ready(function(){
+  // mobile nav
   $('#close--mobile-nav').click(function (e) {
     e.preventDefault();
     $('#mobile-nav').addClass('slideOutRight').removeClass('slideInRight');
@@ -11,14 +11,14 @@ $(document).ready(function(){
     $('body').addClass('overlay-is-open');
   });
 
+  // nav active state
   $(function() {
-    debugger;
     $('.nav-link[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
   });
 
+  // spinner on form submit
   $('.register').submit(function (e) {
     $('#spinner').show();
     return;
   });
-
 });
