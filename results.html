@@ -123,9 +123,15 @@
           </div>
 
           <div class="flex flex-wrap justify-center tr mb2">
-            <div v-for="(day, i) in results" class="blue">
+            <div v-for="(year, i) in results" class="dark-blue">
+              <label :for="i" class="ph3 pv2 mh1 mb2 ba br3 db fw6 pointer nowrap" :class="{ 'bg-dark-blue white': activeYear == year }">{{ i }}</label>
+              <input :id="i" v-model="activeYear" v-bind:value="results[i]" type="radio" class="dn">
+            </div>
+          </div>
+          <div class="flex flex-wrap justify-center tr mb2">
+            <div v-for="(day, i) in activeYear" class="blue">
               <label :for="i" class="ph3 pv2 mh1 mb2 ba br3 db fw6 pointer nowrap" :class="{ 'bg-blue white': activeDay == day }">day {{ i }}</label>
-              <input :id="i" v-model="activeDay" v-bind:value="results[i]" type="radio" class="dn">
+              <input :id="i" v-model="activeDay" v-bind:value="activeYear[i]" type="radio" class="dn">
             </div>
           </div>
 

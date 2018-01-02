@@ -1,43 +1,57 @@
 var results = new Vue({
-      el: '#results',
-      data: {
-        results: {},
-        activeDay: {},
-        loading: true
-      },
+  el: '#results',
+  data: {
+    results: {},
+    activeYear: {},
+    activeDay: {},
+    loading: true
+  },
 
-      computed: {},
+  computed: {},
 
-      methods: {},
+  watch: {
+    activeYear: function(year) {
+      this.activeDay = year[Object.keys(year).pop()];
+    }
+  },
 
-      created: function() {
-        var self = this;
-        var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/11mrRGlu44WtLR3zZd4hQS8ue06jVhtmJNEAHEOWBb9c/edit?usp=sharing';
+  methods: {},
 
-        Tabletop.init( { key: publicSpreadsheetUrl,
-                       callback: showInfo,
-                       simpleSheet: true } )
+  created: function() {
+    var self = this;
+    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/11mrRGlu44WtLR3zZd4hQS8ue06jVhtmJNEAHEOWBb9c/edit?usp=sharing';
 
-        function showInfo(data, tabletop) {
-          var resultsObject = {};
+    Tabletop.init( { key: publicSpreadsheetUrl,
+                   callback: showInfo,
+                   simpleSheet: true } )
 
-          for (var i = 0; i < data.length; i++) {
-            var key = data[i].day;
-            console.log(key);
-            if(!resultsObject[key]) {
-              resultsObject[key] = []
-            }
-            resultsObject[key].push(data[i]);
-          }
-          console.log(resultsObject);
+    function showInfo(data, tabletop) {
+      var resultsObject = {};
 
-          self.loading = false;
-          self.results = resultsObject;
-
-          var daysCount = Object.keys(self.results).length;
-          self.activeDay = self.results[daysCount];
+      for (var i = 0; i < data.length; i++) {
+        var yearKey = data[i].year;
+        if(!resultsObject[yearKey]) {
+          resultsObject[yearKey] = {}
         }
-      },
+      }
+      for (var i = 0; i < data.length; i++) {
+        var year = data[i].year;
+        var day = data[i].day;
+        if(!resultsObject[year][day]) {
+          resultsObject[year][day] = []
+        }
+        resultsObject[year][day].push(data[i]);
+      }
 
-      mounted: function() {},
+      console.log(resultsObject);
+
+      self.loading = false;
+      self.results = resultsObject;
+
+      var yearsCount = Object.keys(self.results).pop();
+      self.activeYear = self.results[yearsCount];
+    }
+  },
+
+  mounted: function() {},
 });
