@@ -11,8 +11,14 @@ $(document).ready(function(){
     $('body').addClass('overlay-is-open');
   });
 
+  $(function() {
+    debugger;
+    $('.nav-link[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
+  });
+
   $('.register').submit(function (e) {
     $('#spinner').show();
     return;
   });
+
 });

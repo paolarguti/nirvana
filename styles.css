@@ -91,7 +91,7 @@ button:focus {
   max-width: 100%;
 }
 .wavy,
-.nav-link:active {
+.nav-link.active {
           text-decoration-line: underline;
      -moz-text-decoration-line: underline;
   -webkit-text-decoration-line: underline;
