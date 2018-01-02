@@ -10,4 +10,9 @@ $(document).ready(function(){
     $('#mobile-nav').addClass('slideInRight').removeClass('slideOutRight dn');
     $('body').addClass('overlay-is-open');
   });
+
+  $('.register').submit(function (e) {
+    $('#spinner').show();
+    return;
+  });
 });

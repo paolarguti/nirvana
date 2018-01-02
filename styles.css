@@ -173,7 +173,53 @@ button:focus {
   background-image: url('assets/safety.png');
 }
 
-/*results*/
+/*not small*/
+@media screen and (min-width:30em) {
+  .flex-row-ns {
+        moz-flex-direction: row;
+        -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+            flex-direction: row;
+        -webkit-box-orient: horizontal;
+  }
+  .section-ns {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+  .multiplebgs .has-bgs {
+    background-repeat: no-repeat, repeat;
+  }
+  .multiplebgs #sai {
+    background-position:right center, left center;
+  }
+  .multiplebgs #safety {
+    background-position:left center, right center;
+  }
+}
+
+/*medium*/
+@media screen and (min-width:30em) and (max-width:60em) {
+  .multiplebgs .has-bgs {
+    background-size: 50% 100%, auto 100%;
+  }
+  .no-multiplebgs .has-bgs {
+    background-size: 50% auto;
+  }
+}
+
+/*large */
+@media screen and (min-width:60em) {
+  .multiplebgs .has-bgs {
+    background-size: 60% 100%, auto 100%;
+  }
+  .no-multiplebgs .has-bgs {
+    background-size: 40% auto;
+  }
+}
+
+/*vendors*/
+
+/*Spinner: http://tobiasahlin.com/spinkit/*/
 .sk-circle {
   margin: 0 auto;
   width: 80px;
@@ -193,7 +239,7 @@ button:focus {
   margin: 0 auto;
   width: 15%;
   height: 15%;
-  background-color: #00449e;
+  background-color: #033e76;
   border-radius: 100%;
   -webkit-animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
           animation: sk-circleBounceDelay 1.2s infinite ease-in-out both;
@@ -275,7 +321,6 @@ button:focus {
 .sk-circle .sk-circle12:before {
   -webkit-animation-delay: -0.1s;
           animation-delay: -0.1s; }
-
 @-webkit-keyframes sk-circleBounceDelay {
   0%, 80%, 100% {
     -webkit-transform: scale(0);
@@ -285,7 +330,6 @@ button:focus {
             transform: scale(1);
   }
 }
-
 @keyframes sk-circleBounceDelay {
   0%, 80%, 100% {
     -webkit-transform: scale(0);
@@ -293,49 +337,5 @@ button:focus {
   } 40% {
     -webkit-transform: scale(1);
             transform: scale(1);
-  }
-}
-
-/*not small*/
-@media screen and (min-width:30em) {
-  .flex-row-ns {
-        moz-flex-direction: row;
-        -ms-flex-direction: row;
-    -webkit-flex-direction: row;
-            flex-direction: row;
-        -webkit-box-orient: horizontal;
-  }
-  .section-ns {
-    margin-right: -1rem;
-    margin-left: -1rem;
-  }
-  .multiplebgs .has-bgs {
-    background-repeat: no-repeat, repeat;
-  }
-  .multiplebgs #sai {
-    background-position:right center, left center;
-  }
-  .multiplebgs #safety {
-    background-position:left center, right center;
-  }
-}
-
-/*medium*/
-@media screen and (min-width:30em) and (max-width:60em) {
-  .multiplebgs .has-bgs {
-    background-size: 50% 100%, auto 100%;
-  }
-  .no-multiplebgs .has-bgs {
-    background-size: 50% auto;
-  }
-}
-
-/*large */
-@media screen and (min-width:60em) {
-  .multiplebgs .has-bgs {
-    background-size: 60% 100%, auto 100%;
-  }
-  .no-multiplebgs .has-bgs {
-    background-size: 40% auto;
   }
 }
