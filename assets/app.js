@@ -15,10 +15,4 @@ $(document).ready(function(){
   $(function() {
     $('.nav-link[href^="/' + location.pathname.split("/")[1] + '"]').addClass('active');
   });
-
-  // spinner on form submit
-  $('.register').submit(function (e) {
-    $('#spinner').show();
-    return;
-  });
 });
