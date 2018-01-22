@@ -13,7 +13,11 @@
           flex-direction: column;
      -webkit-box-orient: vertical;
 }
-
+.flex-wrap {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
 .items-center {
     -webkit-align-items: center;
      -moz-align-items: center;
